@@ -572,8 +572,5 @@ with gr.Blocks(css=css, theme=gr.themes.Soft(primary_hue="blue", secondary_hue="
         gr.Markdown(f"- **Compatibility**: The default base model ({DEFAULT_BASE_MODEL_ID}) is recommended for Structural Guide and Style Reference features.")
         gr.Markdown(f"- **Output**: Generated images and debug maps are saved in the `{OUTPUT_DIR}` folder. Uploaded images are temporarily stored in `{UPLOAD_DIR}`.")
 
-
 if __name__ == "__main__":
-    is_hf_space = os.environ.get("SYSTEM") == "spaces"
-    share_param = True if is_hf_space else os.environ.get("GRADIO_SHARE", "False").lower() == "true"
-    gr_interface.queue().launch(share=share_param, debug=True)
+    gr_interface.queue().launch(share=True, debug=True)
