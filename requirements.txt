@@ -1,0 +1,37 @@
+# Core ML and Diffusers Libraries
+--extra-index-url https://download.pytorch.org/whl/cu126
+torch
+torchvision
+torchaudio
+diffusers>=0.27.0
+transformers>=4.38.0
+accelerate>=0.27.0
+safetensors>=0.4.0
+
+# ControlNet Preprocessing
+controlnet_aux>=0.0.7 
+# controlnet_aux may pull specific versions of onnxruntime, opencv-python, etc.
+# If you encounter issues with onnxruntime, you might need to specify a version, e.g., onnxruntime-gpu or onnxruntime
+
+# Gradio UI
+gradio>=4.20.0 
+# Version 4.20.0 or higher is recommended to avoid issues with component parameters like 'info' or 'optional'
+
+# Image Processing
+Pillow>=9.0.0
+opencv-python>=4.7.0 
+# opencv-python is also often a dependency for controlnet_aux
+
+# Replicate API Client (Optional, if using the Replicate backend)
+replicate>=0.20.0
+requests>=2.25.0
+
+# Other potential dependencies that might be pulled by the above
+# (usually handled automatically by pip, but good to be aware of)
+# numpy
+# packaging
+# huggingface-hub
+# filelock
+# tqdm
+# regex
+# einops (sometimes used by diffusers models or LoRAs)
